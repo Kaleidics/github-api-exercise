@@ -5,8 +5,24 @@
     <meta charset = "utf-8">
     <meta name = "viewport" content = "width=device-width">
   </head>
+  <header role="banner">
+      <h1>Search for Repo</h1>
+  </header>
 
   <body>
+      <form class="search">
+          <input class="github-name" type="text" required>
+          <input type="submit">
+      </form>
+      <section class="results">
+          <ol class="repo-list">
+          </ol>
+      </section>
+
+
+
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>
