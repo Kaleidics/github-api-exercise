@@ -1,6 +1,11 @@
 function testApi(name) {
     return fetch(`https://api.github.com/users/${name}/repos`)
-        .then(response => response.json())
+        .then(response => {
+            if (response.ok) {
+                return response.json();
+            }
+            throw new Error(response.statusText);
+        })
         .then(function (responseJson) {
             for (i = 0; i < responseJson.length; i++) {
                 $(".repo-list").append(`<li>${responseJson[i].full_name}</i>`);
